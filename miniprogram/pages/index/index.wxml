@@ -1,0 +1,71 @@
+<!--index.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+    ></button>
+    <view>
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+    </view>
+  </view>
+
+  <button class="userinfo-nickname" bindtap="test">教师登录</button>
+  <button class="userinfo-nickname" bindtap="add">添加信息</button>
+  <button class="userinfo-nickname" bindtap="getInfo">获取首页信息</button>
+  <button class="userinfo-nickname" bindtap="deleteInfo">删除某条信息</button>
+  <button class="userinfo-nickname" bindtap="mycourse">我的课程</button>
+  <button class="userinfo-nickname" bindtap="allcourse">所有课程</button>
+  <button class="userinfo-nickname" bindtap="addcourses">管理员添加课程</button>
+  <button class="userinfo-nickname" bindtap="addmajor">管理员添加专业</button>
+  <button class="userinfo-nickname" bindtap="deletemajor">管理员删除专业</button>
+  <button class="userinfo-nickname" bindtap="getallmajor">管理员获取所有专业</button>
+  <button class="userinfo-nickname" bindtap="addgrade">管理员添加年级</button>
+  <button class="userinfo-nickname" bindtap="getallgrade">管理员获得所有年级</button>
+  <button class="userinfo-nickname" bindtap="deletegrade">管理员删除年级</button>
+  <button class="userinfo-nickname" bindtap="getallcourses">获取所有课程</button>
+  <button class="userinfo-nickname" bindtap="deletecourse">管理员删除课程</button>
+  <button class="userinfo-nickname" bindtap="getinfotest">获取首页信息新版</button>
+  <button class="userinfo-nickname" bindtap="setstarttime">设置某学期开学第一天时间</button>
+  <button class="userinfo-nickname" bindtap="getInfobyweek">根据周数获取首页信息</button>
+  <button class="userinfo-nickname" bindtap="getalllab">获取所有实验室</button>
+  <button class="userinfo-nickname" bindtap="addlab">添加实验室</button>
+  <button class="userinfo-nickname" bindtap="deletelab">删除实验室</button>
+  <button class="userinfo-nickname" bindtap="state">增加所有state</button>
+
+  <button class="userinfo-nickname" type="warn" open-type="getUserInfo" bindgetuserinfo="doLogin">微信登录测试接口</button>
+
+  <button class="userinfo-nickname" bindtap="logintest">拦截器测试</button>
+  
+
+
+  <!-- 上传图片 -->
+  <view class="uploader">
+    <view class="uploader-text" bindtap="doUpload">
+      <text>上传图片</text>
+    </view>
+    <view class="uploader-container" wx:if="{{imgUrl}}">
+      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    </view>
+  </view>
+
+
+  <!-- 操作数据库 -->
+  <view class="uploader">
+    <navigator url="../databaseGuide/databaseGuide" open-type="navigate" class="uploader-text">
+      <text>前端操作数据库</text>
+    </navigator>
+  </view>
+
+  <!-- 新建云函数 -->
+  <view class="uploader">
+    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
+      <text>快速新建云函数</text>
+    </navigator>
+  </view>
+
+</view>
